@@ -1,0 +1,11 @@
+{
+  "name": "com.konargus.persona",
+  "version": "0.0.1",
+  "displayName": "Konargus - Persona",
+  "unity": "2021.3",
+  "unityRelease": "0f1",
+  "keywords": [],
+  "type": "",
+  "description": "Persona",
+  "hideInEditor": false
+}

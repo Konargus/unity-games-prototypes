@@ -1,0 +1,9 @@
+{
+  "name": "com.konargus.ui",
+  "version": "0.0.1",
+  "displayName": "Konargus - User Interface",
+  "unity": "2021.3",
+  "unityRelease": "0f1",
+  "keywords": [],
+  "hideInEditor": false
+}

@@ -1,0 +1,19 @@
+{
+    "name": "com.konargus.ui.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:938fa2ecb75e804448800b941b2f502f",
+        "com.konargus.ui"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

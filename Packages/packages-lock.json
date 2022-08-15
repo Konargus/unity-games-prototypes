@@ -1,7 +1,55 @@
 {
   "dependencies": {
+    "com.konargus.camera": {
+      "version": "file:com.konargus.camera",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "com.konargus.helpers": {
+      "version": "file:com.konargus.helpers",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "com.konargus.persona": {
+      "version": "file:com.konargus.character",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "com.konargus.persona_equipment": {
+      "version": "file:com.konargus.weapons",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "com.konargus.scenes": {
+      "version": "file:com.konargus.scenes",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "com.konargus.sfx": {
+      "version": "file:com.konargus.sfx",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "com.konargus.traps": {
+      "version": "file:com.konargus.traps",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "com.konargus.ui": {
+      "version": "file:com.konargus.ui",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.unity.2d.animation": {
-      "version": "7.0.6",
+      "version": "7.0.5",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -39,11 +87,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.2d.psdimporter": {
-      "version": "6.0.4",
+      "version": "6.0.3",
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.2d.animation": "7.0.6",
+        "com.unity.2d.animation": "7.0.4",
         "com.unity.2d.common": "6.0.3",
         "com.unity.2d.sprite": "1.0.0"
       },
@@ -74,7 +122,7 @@
       "dependencies": {}
     },
     "com.unity.2d.tilemap.extras": {
-      "version": "2.2.3",
+      "version": "2.2.2",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -86,7 +134,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.burst": {
-      "version": "1.6.6",
+      "version": "1.6.5",
       "depth": 3,
       "source": "registry",
       "dependencies": {
@@ -115,13 +163,13 @@
       "depth": 0,
       "source": "builtin",
       "dependencies": {
-        "com.unity.2d.animation": "7.0.6",
+        "com.unity.2d.animation": "7.0.5",
         "com.unity.2d.pixel-perfect": "5.0.1",
-        "com.unity.2d.psdimporter": "6.0.4",
+        "com.unity.2d.psdimporter": "6.0.3",
         "com.unity.2d.sprite": "1.0.0",
         "com.unity.2d.spriteshape": "7.0.4",
         "com.unity.2d.tilemap": "1.0.0",
-        "com.unity.2d.tilemap.extras": "2.2.3"
+        "com.unity.2d.tilemap.extras": "2.2.2"
       }
     },
     "com.unity.ide.rider": {
@@ -164,7 +212,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.services.core": {
-      "version": "1.4.0",
+      "version": "1.3.1",
       "depth": 1,
       "source": "registry",
       "dependencies": {

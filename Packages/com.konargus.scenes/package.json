@@ -1,0 +1,9 @@
+{
+  "name": "com.konargus.scenes",
+  "version": "0.0.1",
+  "displayName": "Konargus - Scenes",
+  "unity": "2021.3",
+  "unityRelease": "0f1",
+  "keywords": [],
+  "hideInEditor": false
+}

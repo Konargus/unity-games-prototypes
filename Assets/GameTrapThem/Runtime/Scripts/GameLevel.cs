@@ -1,27 +1,31 @@
 ﻿using System;
 using System.Collections;
+using com.konargus.persona;
+using com.konargus.traps;
+using com.konargus.ui;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace TrapThem
 {
-    public class GameLevel : MonoBehaviour, IGameLevel
+    public abstract class GameLevel : MonoBehaviour, IGameLevel
     {
         [SerializeField] private Transform[] enemySpawnPoints;
         [SerializeField] private Transform[] trapsSpawnPoints;
 
-        public event Action<ICharacter> OnEnemySpawn = delegate {  };
-        public event Action OnWinConditionMet = delegate {  };
+        public virtual event Action<IPersona> OnEnemySpawn = delegate {  };
+        public virtual event Action OnWinConditionMet = delegate {  };
+        public virtual event Action OnLoseConditionMet = delegate {  };
 
         private int _enemiesToSpawn;
         private int _enemiesToKill;
         
-        public virtual void SetWinCondition(int enemiesToKill)
+        protected virtual void SetWinCondition(int enemiesToKill)
         {
             _enemiesToKill = enemiesToKill;
         }
 
-        public virtual void EnemyDied(Action<int> enemiesLeft)
+        protected virtual void EnemyDied(Action<int> enemiesLeft)
         {
             _enemiesToKill--;
             if (_enemiesToKill == 0)
@@ -33,47 +37,45 @@ namespace TrapThem
                 enemiesLeft.Invoke(_enemiesToKill);
             }
         }
-        
-        public virtual void SpawnEnemiesOverTime(int amount, Character character)
+
+        protected virtual void SpawnEnemiesOverTime(int amount, IPersonaFactory personaFactory)
         {
             _enemiesToSpawn = amount;
-            StartCoroutine(SpawnEnemiesCoroutine(character));
+            StartCoroutine(SpawnEnemiesCoroutine(personaFactory));
         }
-        
-        public virtual ITrap SpawnTrap(Trap trapPrefab)
+
+        protected virtual ITrap SpawnTrap(ITrapFactory trapFactory)
         {
             var spawnPoint = trapsSpawnPoints[Random.Range(0, trapsSpawnPoints.Length)];
-            var trap = Instantiate(trapPrefab);
-            trap.gameObject.transform.position = spawnPoint.position;
+            var trap = trapFactory.CreateTrap();
+            trap.Position = spawnPoint.position;
             return trap;
         }
 
-        private IEnumerator SpawnEnemiesCoroutine(Character character)
+        public abstract void Initialize(IGameView gameView);
+        
+        public void Destroy()
+        {
+            Destroy(gameObject);
+        }
+
+        private IEnumerator SpawnEnemiesCoroutine(IPersonaFactory personaFactory)
         {
             yield return new WaitForSeconds(2);
             var spawnAmount = _enemiesToSpawn >= 3 ? Random.Range(1, 3) : Random.Range(1, _enemiesToSpawn);
             _enemiesToSpawn -= spawnAmount;
             for (var i = 0; i < spawnAmount; i++)
             {
-                var enemy = SpawnEnemy(character);
+                var enemy = personaFactory.CreatePersona();
+                var spawnPoint = enemySpawnPoints[Random.Range(0, enemySpawnPoints.Length)];
+                enemy.SetPosition(spawnPoint.position);
                 OnEnemySpawn.Invoke(enemy);
-                yield return new WaitForSeconds(0.1f);
             }
             if (_enemiesToSpawn <= 0)
             {
                 yield break;
             }
-            StartCoroutine(SpawnEnemiesCoroutine(character));
-        }
-        
-        private ICharacter SpawnEnemy(Character character)
-        {
-            var spawnPoint = enemySpawnPoints[Random.Range(0, enemySpawnPoints.Length)];
-            var enemy = Instantiate(character);
-            var movementType = enemy.gameObject.AddComponent<IsometricMovement>();
-            enemy.SetMovementType(movementType);
-            enemy.Transform.position = spawnPoint.position;
-            return enemy;
+            StartCoroutine(SpawnEnemiesCoroutine(personaFactory));
         }
     }
 }

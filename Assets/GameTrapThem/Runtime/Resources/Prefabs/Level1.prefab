@@ -164,7 +164,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 508600152951467170}
-  - component: {fileID: 2312046477063604039}
+  - component: {fileID: 5131002029026846786}
   m_Layer: 0
   m_Name: Level1
   m_TagString: Untagged
@@ -188,7 +188,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2312046477063604039
+--- !u!114 &5131002029026846786
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4491704082829352466}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bce6ae2641547149e84a9c54e0e756e, type: 3}
+  m_Script: {fileID: 11500000, guid: a600b47bf9ad4f0fb3ed1583f7a4267e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpawnPoints:
@@ -214,6 +214,10 @@ MonoBehaviour:
   - {fileID: 2187701182738526602}
   - {fileID: 3913227413429845115}
   - {fileID: 7551364976573366953}
+  playerPrefab: {fileID: 3555724986633948780, guid: 9d0a4048de98fe44aa977efccaf7ad5a, type: 3}
+  enemyPrefab: {fileID: 7737449179968083531, guid: c29b5b937968d444abea6590fbdca479, type: 3}
+  knifePrefab: {fileID: 1289421500600358211, guid: 6eb9b54f188f47641b69d9854c5acd5c, type: 3}
+  trapPrefab: {fileID: 4756942025245047176, guid: 129bd003f0a0a27439779ba0da00f0c5, type: 3}
 --- !u!1 &4752040514641572994
 GameObject:
   m_ObjectHideFlags: 0

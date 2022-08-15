@@ -2,13 +2,14 @@
     "name": "TrapThem",
     "rootNamespace": "",
     "references": [
-        "GUID:acf968311a04b1d48987a0fb6fc9612c",
-        "GUID:938fa2ecb75e804448800b941b2f502f",
-        "GUID:1f953dbe8b4804244852294ddcf128d6",
-        "GUID:3630ca7acf95b3e47beab55c5996af7e",
-        "GUID:44401f174e18b684d9f4033ae9aa13a3",
-        "GUID:b2d4bb36fa9061049a8770c86de15468",
-        "GUID:69383f453438e5444a52a487933a7103"
+        "com.konargus.traps",
+        "com.konargus.scenes",
+        "com.konargus.ui",
+        "com.konargus.camera",
+        "com.konargus.persona_equipment",
+        "com.konargus.persona",
+        "com.konargus.sfx",
+        "com.konargus.helpers"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
