@@ -8,8 +8,8 @@
         "com.konargus.camera",
         "com.konargus.persona_equipment",
         "com.konargus.persona",
-        "com.konargus.sfx",
-        "com.konargus.helpers"
+        "com.konargus.helpers",
+        "com.konargus.vfx"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
