@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace com.konargus.sfx
+namespace com.konargus.vfx
 {
-    public static class SpecialEffectPrefabs
+    public static class VisualEffectPrefabs
     {
         public static SimpleDeath SimpleDeath => Resources.Load<SimpleDeath>("SimpleDeath/SimpleDeath");
 

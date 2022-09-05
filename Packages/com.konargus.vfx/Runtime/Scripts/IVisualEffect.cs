@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
 
-namespace com.konargus.sfx
+namespace com.konargus.vfx
 {
-    public interface ISpecialEffect
+    public interface IVisualEffect
     {
         void SetPosition(Vector3 position);
         void SetChild(Transform goTransform);

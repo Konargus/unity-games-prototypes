@@ -1,7 +1,7 @@
 {
-  "name": "com.konargus.sfx",
+  "name": "com.konargus.vfx",
   "version": "0.0.1",
-  "displayName": "Konargus - Special Effects",
+  "displayName": "Konargus - Visual Effects",
   "unity": "2021.3",
   "unityRelease": "0f1",
   "keywords": [],

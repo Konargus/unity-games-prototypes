@@ -2,10 +2,10 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-namespace com.konargus.sfx
+namespace com.konargus.vfx
 {
     [RequireComponent(typeof(Animator))]
-    public class SpecialEffect : MonoBehaviour, ISpecialEffect
+    public class VisualEffect : MonoBehaviour, IVisualEffect
     {
         [SerializeField] private AnimationClip animationClip;
         [SerializeField] private Transform animationTransform;

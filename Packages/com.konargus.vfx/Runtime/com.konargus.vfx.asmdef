@@ -1,6 +1,6 @@
 {
-    "name": "com.konargus.sfx",
-    "rootNamespace": "com.konargus.sfx",
+    "name": "com.konargus.vfx",
+    "rootNamespace": "com.konargus.vfx",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
