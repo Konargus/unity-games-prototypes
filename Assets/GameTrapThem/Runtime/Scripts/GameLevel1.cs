@@ -1,5 +1,5 @@
 using System;
-using com.konargus.sfx;
+using com.konargus.vfx;
 using com.konargus.camera;
 using com.konargus.persona_equipment;
 using com.konargus.persona;
@@ -20,7 +20,7 @@ namespace TrapThem
         private IEquipmentFactory<MeleeWeapon> _knifeFactory;
         private IPersonaFactory _enemyFactory;
         private ITrapFactory _killTrapFactory;
-        private ISpecialEffectFactory _sfxFactorySimpleBoom;
+        private IVisualEffectFactory _sfxFactorySimpleBoom;
         private Transform LevelTransform => transform;
 
 
@@ -64,7 +64,7 @@ namespace TrapThem
             SpawnEnemiesOverTime(5, _enemyFactory);
             
             _killTrapFactory = new KillTrapFactory(trapPrefab, LevelTransform);
-            _sfxFactorySimpleBoom = new SpecialEffectFactory(SpecialEffectPrefabs.SimpleDeath, LevelTransform);
+            _sfxFactorySimpleBoom = new VisualEffectFactory(VisualEffectPrefabs.SimpleDeath, LevelTransform);
             
             OnEnemySpawn += enemy =>
             {
