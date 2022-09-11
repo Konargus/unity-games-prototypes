@@ -4,8 +4,8 @@ namespace com.konargus.vfx
 {
     public class VisualEffectFactory : IVisualEffectFactory
     {
-        private protected Transform Parent { get; }
-        private protected VisualEffect Prefab { get; }
+        private Transform Parent { get; }
+        private VisualEffect Prefab { get; }
 
         public VisualEffectFactory(VisualEffect sfxPrefab, Transform parent)
         {
@@ -13,12 +13,12 @@ namespace com.konargus.vfx
             Prefab = sfxPrefab;
         }
         
-        public virtual IVisualEffect CreateSpecialEffect()
+        public virtual IVisualEffect CreateVisualEffect()
         {
-            var sfxGo = Object.Instantiate(Prefab, Vector3.down, Quaternion.identity, Parent);
-            var sfx = sfxGo.GetComponent<IVisualEffect>();
+            var vfxGo = Object.Instantiate(Prefab, Vector3.down, Quaternion.identity, Parent);
+            var vfx = vfxGo.GetComponent<IVisualEffect>();
             
-            return sfx;
+            return vfx;
         }
     }
 }

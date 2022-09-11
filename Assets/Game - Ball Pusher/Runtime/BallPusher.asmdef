@@ -1,15 +1,10 @@
 {
-    "name": "TrapThem",
-    "rootNamespace": "",
+    "name": "BallPusher",
+    "rootNamespace": "BallPusher",
     "references": [
-        "com.konargus.traps",
-        "com.konargus.scenes",
-        "com.konargus.ui",
         "com.konargus.camera",
-        "com.konargus.persona_equipment",
-        "com.konargus.persona",
-        "com.konargus.helpers",
-        "com.konargus.vfx"
+        "com.konargus.vfx",
+        "Unity.TextMeshPro"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

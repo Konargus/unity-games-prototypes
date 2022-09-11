@@ -6,5 +6,6 @@ namespace com.konargus.camera
     {
         void LookAt(Transform target);
         void Follow(Transform target, Vector3 offset);
+        void FollowFromBehind(Transform target, Vector3 offset);
     }
 }

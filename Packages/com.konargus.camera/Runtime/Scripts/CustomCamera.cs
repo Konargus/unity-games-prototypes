@@ -1,20 +1,25 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace com.konargus.camera
 {
     public class CustomCamera : MonoBehaviour, ICustomCamera
     {
-        private static CustomCamera _instance;
+        private static ICustomCamera _instance;
         private Transform _target;
         private Vector3 _offset;
 
-        public static CustomCamera Instance
+        public static ICustomCamera Instance
         {
-            get { return _instance ??= Instantiate(Resources.Load<CustomCamera>("CustomCamera")).GetComponent<CustomCamera>(); }
+            get { return
+                _instance ??= Instantiate(Resources.Load<CustomCamera>("CustomCamera")).GetComponent<ICustomCamera>();
+                
+            }
         }
 
         private void Start()
         {
+            tag = "MainCamera";
             DontDestroyOnLoad(this);
         }
 
@@ -23,7 +28,7 @@ namespace com.konargus.camera
             if (_target == null)
                 return;
         
-            var tr = _instance.transform;
+            var tr = transform;
             tr.LookAt(_target);
             var targetPos = _target.position;
             tr.position = new Vector3(targetPos.x - _offset.x, _offset.y, targetPos.z);
@@ -38,6 +43,11 @@ namespace com.konargus.camera
         {
             _target = target;
             _offset = offset;
+        }
+        
+        public virtual void FollowFromBehind(Transform target, Vector3 offset)
+        {
+            throw new NotImplementedException();
         }
     }
 }

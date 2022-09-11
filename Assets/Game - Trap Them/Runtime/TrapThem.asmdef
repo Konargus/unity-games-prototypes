@@ -1,0 +1,23 @@
+{
+    "name": "TrapThem",
+    "rootNamespace": "TrapThem",
+    "references": [
+        "com.konargus.traps",
+        "com.konargus.scenes",
+        "com.konargus.ui",
+        "com.konargus.camera",
+        "com.konargus.persona_equipment",
+        "com.konargus.persona",
+        "com.konargus.helpers",
+        "com.konargus.vfx"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

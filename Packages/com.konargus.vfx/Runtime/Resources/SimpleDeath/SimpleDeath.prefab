@@ -77,8 +77,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 690c2a4780c6413a9239f67c02c375e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 1541221115950347787}
-  animationClip: {fileID: 7400000, guid: f7584b018f88b42ae932d63ac3807cb6, type: 2}
   animationTransform: {fileID: 8005835732192445325}
 --- !u!95 &1541221115950347787
 Animator:

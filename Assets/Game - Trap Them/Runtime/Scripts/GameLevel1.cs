@@ -20,7 +20,7 @@ namespace TrapThem
         private IEquipmentFactory<MeleeWeapon> _knifeFactory;
         private IPersonaFactory _enemyFactory;
         private ITrapFactory _killTrapFactory;
-        private IVisualEffectFactory _sfxFactorySimpleBoom;
+        private IVisualEffectFactory _vfxFactorySimpleDeath;
         private Transform LevelTransform => transform;
 
 
@@ -64,7 +64,7 @@ namespace TrapThem
             SpawnEnemiesOverTime(5, _enemyFactory);
             
             _killTrapFactory = new KillTrapFactory(trapPrefab, LevelTransform);
-            _sfxFactorySimpleBoom = new VisualEffectFactory(VisualEffectPrefabs.SimpleDeath, LevelTransform);
+            _vfxFactorySimpleDeath = new VisualEffectFactory(VisualEffectPrefabs.SimpleDeath, LevelTransform);
             
             OnEnemySpawn += enemy =>
             {
@@ -82,6 +82,8 @@ namespace TrapThem
                     persona.TakeDamage(damage);
                 };
                 
+                var dieAnimation = _vfxFactorySimpleDeath.CreateVisualEffect();
+                
                 enemy.OnHealthDecrease += healthLeft =>
                 {
                     if (healthLeft > 0)
@@ -89,7 +91,6 @@ namespace TrapThem
 
                     enemy.Stop();
                     
-                    var dieAnimation = _sfxFactorySimpleBoom.CreateSpecialEffect();
                     dieAnimation.SetPosition(enemy.Transform.position);
                     dieAnimation.SetChild(enemy.Transform);
                     
